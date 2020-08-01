@@ -1,11 +1,13 @@
 #include <iostream>
 #include "1.h"
 #include "Fbi.h"
+#include "jo.h"
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    int i;
-    for (int i = 0; i < 40; ++i) {
-        printf("%d ",Fbi(i));
+    long long i;
+    while(cin>>i)
+    {
+        O_or_j(i);
     }
     return 0;
 }

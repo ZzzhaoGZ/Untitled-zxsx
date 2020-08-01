@@ -3,5 +3,6 @@
 
 CMakeFiles/untitled.dir/main.cpp.o: ../1.h
 CMakeFiles/untitled.dir/main.cpp.o: ../Fbi.h
+CMakeFiles/untitled.dir/main.cpp.o: ../jo.h
 CMakeFiles/untitled.dir/main.cpp.o: ../main.cpp
 

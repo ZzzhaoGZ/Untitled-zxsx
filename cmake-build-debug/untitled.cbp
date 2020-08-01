@@ -89,6 +89,18 @@
 		<Unit filename="/Users/tingjun/CLionProjects/untitled/main.cpp">
 			<Option target="untitled"/>
 		</Unit>
+		<Unit filename="/Users/tingjun/CLionProjects/untitled/栈.h">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/Users/tingjun/CLionProjects/untitled/链式线性表.h">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/Users/tingjun/CLionProjects/untitled/静态链表.h">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/Users/tingjun/CLionProjects/untitled/顺序线性表.h">
+			<Option target="untitled"/>
+		</Unit>
 		<Unit filename="/Users/tingjun/CLionProjects/untitled/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

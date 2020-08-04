@@ -55,4 +55,12 @@ int strlength(Str str)
 {
     return str.length;
 }
+
+int strcompare(Str s1, Str s2){
+    for (int i = 0; i < s1.length && i < s2.length; ++i) {
+        if (s1.ch[i]!=s2.ch[i])
+            return s1.ch[i] - s2.ch[i];
+        return s1.length - s2.length;
+    }
+}
 #endif //UNTITLED_串_H

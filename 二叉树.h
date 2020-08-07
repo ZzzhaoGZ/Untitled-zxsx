@@ -210,4 +210,128 @@ int maxNode(BTNode *b)
         return max;
     } else return 0; //空树直接访问0
 }
+
+void preorderNonrecursion(BTNode *bt)
+{//先序遍历非递归算法
+
+    if(bt!=NULL)
+    {
+        BTNode *Stack[maxSize];
+        int top = -1;
+        BTNode *p;
+        Stack[++top]=bt;
+        while (top!=-1)
+        {
+            p = Stack[top--];
+            Visit(p);
+            if(p->rchild!=NULL)
+                Stack[++top]=p->rchild;
+            if(p->lchild!=NULL)
+                Stack[++top]=p->lchild;
+        }
+
+    }
+}
+
+void inorderNonrecursion(BTNode *bt)
+{
+    if(bt!=NULL)
+    {
+        BTNode *Stack[maxSize];
+        int top=-1;
+        BTNode *p;
+        p=bt;
+        while (top!=-1||p!=NULL)
+        {
+            while (p!=NULL)
+            {
+                Stack[++top]=p;
+                p=p->lchild;
+            }
+            if(top!=-1)
+            {
+                p=Stack[top--];
+                Visit(p);
+                p=p->rchild;
+            }
+        }
+    }
+}
+
+void postorderNonrecursion(BTNode *bt)
+{
+    if(bt!=NULL)
+    {
+        BTNode *Stack1[maxSize];int top1=-1;
+        BTNode *Stack2[maxSize];int top2=-1;
+        BTNode *p = NULL;
+        Stack1[++top1]=bt;
+        while (top1!=-1)
+        {
+            p=Stack1[top1--];
+            Stack2[++top2] = p;
+            if(p->lchild!=NULL)
+                Stack1[++top1]=p->lchild;
+            if(p->rchild!=NULL)
+                Stack1[++top1]=p->rchild;
+        }
+        while (top2!=-1)
+        {
+            p=Stack2[top2--];
+            Visit(p);
+        }
+    }
+}
+
+typedef struct TBTNode
+{
+    char data;
+    int ltag,rtag; //线索标记
+    struct TBTNode *lchild;
+    struct TBTNode *rchild;
+}TBTNode;
+
+void InThread(TBTNode *p,TBTNode *&pre)
+{
+    if(p!=NULL)
+    {
+        InThread(p->lchild,pre);
+        if(p->lchild==NULL)
+        {
+            p->lchild=pre;
+            p->ltag=1;
+        }
+        if(pre!=NULL&&pre->rchild==NULL)
+        {
+            pre->rchild=p;
+            pre->rtag=1;
+        }
+        pre=p;
+        InThread(p->rchild,pre);
+    }
+}
+
+void createInThread(TBTNode *root)
+{
+    TBTNode *pre=NULL;
+    if(root!=NULL)
+    {
+        InThread(root,pre);
+        pre->rchild=NULL;
+        pre->rtag=1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif //UNTITLED_二叉树_H

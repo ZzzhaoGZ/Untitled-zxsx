@@ -22,7 +22,7 @@ void insertsort(int arr[],int n)
 }
 
 void selectsort(int arr[],int n)
-{
+{//简单选择排序
     int i,j,k;
     int temp;
     for(i=0;i<n;++i)
@@ -36,4 +36,41 @@ void selectsort(int arr[],int n)
         arr[k]=temp;
     }
 }
+
+void bublesort(int arr[],int n)
+{//冒泡排序
+    int temp,i,j,flag;
+    for(i=n-1;i>=1;i--)
+    {
+        flag=0;
+        for(j=1;j<=i;j++)
+            if(arr[j-1]>arr[j])
+            {
+                temp=arr[j];
+                arr[j]=arr[j-1];
+                arr[j-1]=temp;
+
+                flag=1;
+            }
+        if (flag==0)
+            return;
+    }
+}
 #endif //UNTITLED_排序_H
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

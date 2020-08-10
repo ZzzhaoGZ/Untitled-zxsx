@@ -55,7 +55,7 @@ void bublesort(int arr[],int n)
         if (flag==0)
             return;
     }
-}
+}//sgjj
 #endif //UNTITLED_排序_H
 
 

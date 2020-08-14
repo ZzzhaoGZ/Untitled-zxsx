@@ -57,17 +57,19 @@ void bublesort(int arr[],int n)
     }
 }//sgjj
 
-void shellsort(int arr[], int n)
-{
+void shellsort(int arr[],int n)
+{//希尔排序
     int temp;
-    for (int gap = n/2; gap > 0; gap/=2)
+    int j;
+    for(int gap = n/2; gap > 0; gap/=2)
     {
-        for (int i = gap; i < n; ++i)
+        for(int i = gap;i<n;i++)
         {
-            temp=arr[i];
-            int j;
+            temp = arr[i];
             for(j=i;j>=gap&&arr[j-gap]>temp;j-=gap)
+            {
                 arr[j]=arr[j-gap];
+            }
             arr[j]=temp;
         }
     }

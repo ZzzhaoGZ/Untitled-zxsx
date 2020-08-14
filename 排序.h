@@ -74,6 +74,34 @@ void shellsort(int arr[],int n)
         }
     }
 }
+
+void quickSort(int arr[],int low,int high)
+{//快速排序
+    int temp;
+    int i=low,j=high;
+    if(low<high)
+    {
+        temp=arr[low];
+        while (i<j)
+        {
+            while (j>i&&arr[j]>=temp) --j;
+            if(i<j)
+            {
+                arr[i] = arr[j];
+                ++i;
+            }
+            while (j>i&&arr[i]<temp) ++i;
+            if(i<j)
+            {
+                arr[j] = arr[i];
+                --j;
+            }
+        }
+        arr[i]=temp;
+        quickSort(arr,low,i-1);
+        quickSort(arr,i+1,high);
+    }
+}
 #endif //UNTITLED_排序_H
 
 

@@ -1,11 +1,10 @@
 #include <iostream>
 using namespace std;
-#include "二叉树.h"
+#include "排序.h"
 int main() {
-    cout<<"赵港是你爹"<<endl;
-    int x;
-    char C = '/';
-    x=op(4,5,C);
-    cout<<x<<endl;
+
+    int arr[]={49,38,65,97,76,13,27,49};
+    quickSort(arr,0,7);
+
 }
 

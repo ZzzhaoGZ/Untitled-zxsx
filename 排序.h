@@ -102,6 +102,40 @@ void quickSort(int arr[],int low,int high)
         quickSort(arr,i+1,high);
     }
 }
+
+void sift(int arr[],int low,int high)
+{//堆排序所需的函数
+    int i=low,j=2*i+1;
+    int temp=arr[i];
+    while (j<=high)
+    {
+        if(j<high&&arr[j]<arr[j+1])
+            ++j;
+        if(temp<arr[j])
+        {
+            arr[i] = arr[j];
+            i=j;
+            j=2*i+1;
+        } else break;
+    }
+    arr[i]=temp;
+}
+
+void heapSort(int arr[],int n)
+{//堆排序
+    int i;
+    int temp;
+    for(i=n/2-1;i>=0;--i)
+        sift(arr,i,n-1);
+    for(i=n-1;i>0;--i)
+    {
+        temp=arr[0];
+        arr[0]=arr[i];
+        arr[i]=temp;
+        sift(arr,0,i-1);
+    }
+}
+
 #endif //UNTITLED_排序_H
 
 
